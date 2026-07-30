@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="icono-192.png">
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#764ba2">
+    <link rel="apple-touch-icon" href="./icono-192.png">
     <title>Conversor de Monedas</title>
 </head>
 <body>
@@ -19,8 +23,7 @@
     <select id="moneda-origen">
       <option value="USD">🇺🇸 USD</option>
       <option value="EUR">🇪🇺 EUR</option>
-      <option value="GBP">🇬🇧 GBP</option>
-      <option value="JPY">🇯🇵 JPY</option>
+      <option value="VES">🇻🇪 VES</option>
     </select>
     
     <span class="icon">➡️</span>
@@ -28,8 +31,7 @@
     <select id="moneda-destino">
       <option value="EUR">🇪🇺 EUR</option>
       <option value="USD">🇺🇸 USD</option>
-      <option value="GBP">🇬🇧 GBP</option>
-      <option value="JPY">🇯🇵 JPY</option>
+      <option value="VES">🇻🇪 VES</option>
     </select>
   </div>
 
@@ -40,4 +42,19 @@
     
 </body>
 <script src="script.js"></script>
+<script>
+    // Verifica si el navegador soporta Service Workers
+    if ('serviceWorker' in navigator) {
+      // Cuando la página termine de cargar, registra el archivo sw.js
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js')
+          .then(registro => {
+            console.log('¡Service Worker activado con éxito!', registro.scope);
+          })
+          .catch(error => {
+            console.error('Falló el registro del Service Worker:', error);
+          });
+      });
+    }
+</script>
 </html>
