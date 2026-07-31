@@ -1,6 +1,31 @@
 // Pega aquí la clave que copiaste de la página web
 const API_KEY = 'e0dec1615c560ae8aefdca00';
 
+// NUEVA FUNCIÓN: Intercambia monedas y ejecuta la animación
+function intercambiarMonedas() {
+  const origen = document.getElementById('moneda-origen');
+  const destino = document.getElementById('moneda-destino');
+  const icono = document.querySelector('.icon');
+
+  // 1. Intercambiamos los valores (lo hacemos de forma asíncrona para que la UI se actualice primero)
+  const temporal = origen.value;
+  origen.value = destino.value;
+  destino.value = temporal;
+
+  // 2. Iniciamos la animación
+  icono.classList.add('icon-swap-animate');
+
+  // Eliminamos la clase de animación después de que termine para que pueda reutilizarse
+  // El tiempo (600ms) debe coincidir con el tiempo de transición en CSS
+  setTimeout(() => {
+    icono.classList.remove('icon-swap-animate');
+  }, 600); // 0.6s = 600ms
+
+  // 3. Recalculamos la conversión inmediatamente
+  // (Asumimos que tu función de cálculo se llama convertirMoneda y está definida)
+  convertirMoneda();
+}
+
 async function convertirMoneda() {
   const monto = document.getElementById('monto').value;
   const origen = document.getElementById('moneda-origen').value;
