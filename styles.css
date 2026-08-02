@@ -5,17 +5,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: linear-gradient(135deg, #FFD600 0%, #0038A8 100%);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* Efecto Glassmorphism para la tarjeta */
 .card {
-  background: rgba(255, 255, 255, 0.15);
+  background: #ffffff;
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 6px solid #CE1126;
+  /* border: 1px solid rgba(255, 255, 255, 0.18); */
   padding: 40px;
   width: 350px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
@@ -23,15 +24,26 @@ body {
   color: white;
 }
 
+h1, h2, label, p {
+  color: #002A80; 
+}
+
 /* Estilos de los controles (Inputs y Botones) */
 input, select {
+  border: 1.5px solid #0038A8; /* Borde azul */
+  color: #333333;
   width: 100%;
   padding: 12px;
   margin-bottom: 20px;
   border-radius: 8px;
-  border: none;
   font-size: 16px;
   box-sizing: border-box;
+}
+
+select:focus, input:focus {
+  outline: none;
+  border-color: #FFD600; /* Borde amarillo al seleccionar */
+  box-shadow: 0 0 8px rgba(255, 214, 0, 0.6);
 }
 
 .row {
@@ -44,8 +56,8 @@ input, select {
 }
 
 button {
-  background: #ff7eb3;
-  color: white;
+  background-color: #CE1126;
+  color: #ffffff;
   border: none;
   padding: 15px;
   width: 100%;
@@ -57,7 +69,7 @@ button {
 }
 
 button:hover {
-  background: #ff758c;
+  background: #A80D1C;
   transform: translateY(-2px);
 }
 
@@ -65,6 +77,15 @@ button:hover {
   margin-top: 25px;
   font-size: 24px;
   font-weight: bold;
+}
+
+/* Estilos específicos para que el resultado resalte en la tarjeta blanca */
+#resultado {
+  color: #002A80;      /* Azul oscuro para máximo contraste */
+  font-size: 1.5rem;   /* Un tamaño de letra más grande */
+  font-weight: bold;   /* Letra más gruesa */
+  text-align: center;  /* Centrado */
+  margin-top: 20px;    /* Un poco de espacio arriba para separarlo del botón */
 }
 
 .icon {  

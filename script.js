@@ -100,3 +100,21 @@ window.addEventListener('online', () => {
   boton.style.background = "#ff7eb3";
   boton.style.cursor = "pointer";
 });
+
+// 1. Seleccionamos el campo donde el usuario escribe el monto
+// (Revisa que el ID en tu HTML sea 'monto'. Si le pusiste otro nombre, cámbialo aquí)
+const inputMonto = document.getElementById('monto');
+
+// 2. Le agregamos el "escuchador" para detectar cuando se presiona una tecla
+inputMonto.addEventListener('keypress', function(event) {
+  
+  // 3. Verificamos si la tecla presionada fue "Enter"
+  if (event.key === 'Enter') {
+    
+    // Evita que el navegador intente enviar un formulario por defecto (recargar la página)
+    event.preventDefault(); 
+    
+    // 4. Ejecutamos tu función de conversión (asumiendo que se llama así)
+    convertirMoneda(); 
+  }
+});
