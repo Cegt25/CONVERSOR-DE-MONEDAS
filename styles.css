@@ -73,11 +73,11 @@ button:hover {
   transform: translateY(-2px);
 }
 
-.resultado {
+/* .resultado {
   margin-top: 25px;
   font-size: 24px;
   font-weight: bold;
-}
+} */
 
 /* Estilos específicos para que el resultado resalte en la tarjeta blanca */
 #resultado {
